@@ -1,0 +1,15 @@
+  535  history
+  536  man tail
+  537  man tail
+  538  history | tail -n=15
+  539  history | tail -n 15
+  540  history | head -n 15
+  541  history | tail -n 15
+  542  history | tail -n 15
+  543  history | tail -n 15
+  544  history | tail -n 15
+  545  history | tail -n 15
+  546  less ex1.txt 
+  547  cat ex1.txt 
+  548  cd ../week1
+  549  history | tail -n 15 > ex2.txt
