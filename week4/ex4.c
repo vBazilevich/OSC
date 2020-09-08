@@ -31,7 +31,7 @@ char *read_line() {
     return buffer;
 }
 
-// splits comand to words by spaces
+// splits comand to words by spaces and tabs
 char **tokenize(char *cmd) {
     char **tokens = NULL;
     size_t tokens_count = 0;
@@ -56,22 +56,41 @@ int main(void) {
         printf("->> ");
         // reading command
         cmd = read_line();
+        char **args = tokenize(cmd);
+        bool background = false;
+        size_t arg_index = 0;
+        // looking for & signalling of background execution
+        while (args[arg_index] != NULL) {
+            if (strcmp(args[arg_index], "&") == 0) {
+                background = true;
+                break;
+            }
+            ++arg_index;
+        }
+
+        // removing & if it's present
+        if (background) {
+            args[arg_index] = NULL;
+        }
 
         if (strncmp(cmd, "exit", 4) == 0) {
             terminated = true;
         } else {
             pid_t pid = fork();
             if (pid == 0) {
-                char **args = tokenize(cmd);
+                // child
                 execvp(args[0], args);
+                // smth goes wrong if we've reached this line
                 exit(EXIT_FAILURE);
             } else if (pid < 0) {
                 perror("ERROR: Can't fork process\n");
+                free(args);
                 exit(EXIT_FAILURE);
-            } else {
+            } else if (!background) {
                 wait(NULL);
             }
         }
+        free(args);
         free(cmd);
     }
     return EXIT_SUCCESS;
