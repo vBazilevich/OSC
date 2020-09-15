@@ -33,8 +33,9 @@ int main(int argc, char *argv[]) {
 
     // joining threads
     for (int i = 0; i < THREADS_NUMBER; ++i) {
-        int *retval;
+        int *retval = malloc(sizeof(int));
         pthread_join(threads[i], (void **)&retval);
+        free(retval);
     }
     return EXIT_SUCCESS;
 }
