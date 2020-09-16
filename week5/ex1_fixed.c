@@ -5,14 +5,18 @@
 #define THREADS_NUMBER 32
 #define BUF_SIZE 128
 
+int turn = 0;
 
 void *say_hello(void *args) {
     // reading thread id
     int thread_id = *(int *)args;
 
     // Busy waiting with strict alternation
+    while (turn != thread_id);
     printf("Hello! I'm thread %d\n", thread_id);
 
+    // Incrementing turn
+    turn = (turn + 1) % THREADS_NUMBER;
     pthread_exit(EXIT_SUCCESS);
     return NULL;
 }
