@@ -17,8 +17,10 @@ It must be a poritive integer number.
 
 ## Tests
 processes0.list - 5 processes with overlapping arrival times
+    
 processes1.list - 3 processes with non-overlapping arrival times
-processes2.list - 
+
+processes2.list - 4 overlapping processes
 
 ## Comparison
 This part of the comparison is based on processes0.list test.
