@@ -8,7 +8,7 @@ void schedule(processes_data *pd) {
         if (tick < pd->AT[i]) {
             tick = pd->AT[i];
         }
-        pd->WT[i] += tick - pd->LET[i];
+        pd->WT[i] += tick - pd->AT[i];
         tick += pd->BT[i];
         pd->ET[i] = tick;
         pd->TAT[i] = pd->ET[i] - pd->AT[i];
