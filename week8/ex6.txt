@@ -1,0 +1,3 @@
+We have 8KB page. It requieres 13 bits to refere to each byte in a page.
+Thus, out of 16 bits we have 3 unused bits. We can use them to indicate the page number.
+Thus, we will have only 8 pages

@@ -1,0 +1,9 @@
+The physicall address is the exact address of the byte in the main memory.
+Virtual address is the address of the byte in virtual memory of the process.
+Virtual address must be mapped to physical address before it can be used.
+If two processes use the same physical address simultaneously, it usually leads
+to failures or race conditions(if such "sharing" wasn't a goal). However, such
+sutuation is impossible with virtual addresses until we share the byte explicitly.
+Using physical address we can occasionaly access the memory used by OS. If it's
+read-only, then our process will crash. Otherwise, if we change this byte it can
+lead to unpredictable behavior of the system. Again, using VA it is not possible.
