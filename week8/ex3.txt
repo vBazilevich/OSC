@@ -1,0 +1,8 @@
+In top we can see the following:
+1. Initially, physicall memory consumption grows rapidly, but then it stops at some boundary
+(on my system it happens the approx 7.5Gb of physical memory out of 8Gb are used). At this
+moment sytems starts to use swap partition. The physical memory is still about 7.5Gb, but
+used swap memory grows rapidly. Then the process goes to terminate, the swap usage starts decreasing.
+When the swap is empty, physical memory consumption starts to decrease. Furthemore, here we can see
+that out benchmarking process consumes quite a lot of CPU resources. At some moments it even dominates
+all other processes in the system in terms of CPU usage.
