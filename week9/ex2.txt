@@ -1,0 +1,18 @@
+1. Low hit rate. To construct such a sequence we just need to have more pages than the page frames. 
+Moreover, interval between the same page accesses must be as big as possible. 
+
+For example, if we have 2 page frames and the following reference order, the hit-miss rate will be 0:
+
+1 2 3 1 2 3 1 2 3
+
+2. High hit rate. Two scenarios: 
+    1. Number of pages is less than number of page frames(hit-miss rate will be 1). 
+    2. Accesses to the same page are condensed in almost one place(high hit-miss rate)
+
+Hit rate is going to tend to 1.
+
+Examples for 4 page-frames case:
+
+1 1 1 2 2 3 2 3 3 4 4 4 4 4
+
+1 1 1 2 2 1 1 2 2 1 1
