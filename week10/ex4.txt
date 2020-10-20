@@ -1,0 +1,1 @@
+Inode number: 786475, filenames: file1 link1 
