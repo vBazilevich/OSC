@@ -1,0 +1,15 @@
+# Creating file
+touch _ex1.txt
+
+# Creating hard links
+ln _ex1.txt _ex1_1.txt
+ln _ex1.txt _ex1_2.txt
+
+# Getting i-nodes number
+ls -i
+
+# Output:
+I-nod number    filename
+786467          _ex1_1.txt
+786467          _ex1_2.txt
+786467          _ex1.txt

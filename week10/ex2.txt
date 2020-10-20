@@ -1,0 +1,21 @@
+# Creating file.txt in directory week1 from directory week10 using relative path
+touch ../week1/file.txt
+
+# Creating hard link to file.txt
+link ../week1/file.txt _ex2.txt
+
+# Getting i-node number
+ls -i _ex2.txt
+# Output:
+27134702 ../week1/file.txt
+
+# Tracing all links for inode 27134702
+find .. -inum 27134702
+# Output
+../week10/_ex2.txt
+../week1/file.txt
+
+# Removing all links from file.txt
+find .. -inum 27134702 -exec rm {} \;
+
+# As all the links are removed, the file is also erased

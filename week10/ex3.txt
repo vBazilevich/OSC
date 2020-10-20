@@ -1,0 +1,16 @@
+# Creating file _ex3.txt
+touch _ex3.txt
+
+# Removing execute permissions for everyone
+chmod a-x _ex3.txt
+
+# Giving rwx righs to current user and other, but not to the group of the user
+chmod 707 _ex3.txt
+
+# Giving permissions to group the same as for user
+chmod g=u _ex3.txt
+
+660 means that owner and users from his group can read and write file
+775 means that owner and users from his group can read, write and execute file
+    while other can only read and execute
+777 All users can read, write and execute
