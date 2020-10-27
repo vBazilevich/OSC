@@ -1,0 +1,9 @@
+On my system, stdout is line buffered
+On fork the buffer is copied.
+
+In the first program Hello is putted to the buffer without new line character.
+Therefore, after the work when parent and child process put new line char,
+then both processes flush their buffers to stdout and we see line Hello twice.
+
+In the second program we put new line character immediately, therefore after fork 
+both processes have empty buffers.
