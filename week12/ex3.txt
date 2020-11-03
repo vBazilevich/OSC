@@ -21,3 +21,9 @@ Lets make similar experiment for 100MB file:
 |    64KB  |  1.376 |   --   |
 |     1MB  |  0.330 | 11.913 |
 |    16MB  |  0.319 | 0.343  |
+
+So, from here we can see that increase of buffer size can increase the copy performance for the large files.
+However, for the small files it won't change anything. Furthermore, we are suddenly limited by the size of RAM.
+So, there always should be balance between the buffer size and the performance.
+
+Using SYNC usually decreases the performance
