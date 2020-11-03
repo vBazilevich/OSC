@@ -1,0 +1,23 @@
+For 64 KB file:
+| BUF_SIZE |  TIME  |  SYNC  |
+|   512B   | 0.001s | 15.367 |
+|  1024B   | 0.001s |  6.674 |
+
+So, it is obvious that there is not enough precison to make a comparison for such a small file
+
+-- sign means that operation takes too much time (more than 1 minute) so I am too lazy for waiting for it
+
+For 1MB file:
+| BUF_SIZE |  TIME  |  SYNC  |
+|    512B  | 1.510s |   --   |
+|   1024B  | 1.154s |   --   |
+|   4096B  | 1.139s |   --   |
+|    64KB  | 1.349s |   --   |
+|     1MB  | 1.348s | 27.767 |  
+
+Lets make similar experiment for 100MB file:
+| BUF_SIZE |  TIME  |  SYNC  |
+|    512B  |  2.161 |   --   |
+|    64KB  |  1.376 |   --   |
+|     1MB  |  0.330 | 11.913 |
+|    16MB  |  0.319 | 0.343  |
