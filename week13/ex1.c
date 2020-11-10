@@ -93,7 +93,6 @@ int main(int argc, char *argv[]) {
         // looking for the runnable process
         for (int j = 0; j < P; ++j) {
             if (!finished[j] && row_is_less(available, Req[j], R)) {
-                fprintf(stderr, "Process %d succesfully terminate\n", j);
                 // "free" resources
                 for (int r = 0; r < R; ++r) {
                     available[r] += C[j][r];
